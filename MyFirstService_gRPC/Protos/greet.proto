@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "MyFirstService_gRPC";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+enum Pokemon
+{
+  Pikachu = 0;
+  Bulbasaur = 1;
+  Charmander = 2;
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+  string surename = 2;
+  int32 personNumber = 3;
+  Pokemon userPokemon = 4;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}

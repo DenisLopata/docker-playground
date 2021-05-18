@@ -1,0 +1,26 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MyFirstService_gRPC";
+
+import "Protos/greet.proto";
+
+package user;
+
+// The greeting service definition1.
+service User {
+  // Sends a greeting1
+  rpc GetUserById (UserIdRequest) returns (UserReply);
+}
+
+// The request message containing the user's name1.
+message UserIdRequest {
+  int32 personNumber = 1;
+}
+
+// The response message containing the greetings1.
+message UserReply {
+  string name = 1;
+  string surename = 2;
+  int32 personNumber = 3;
+  greet.Pokemon userPokemon = 4;
+}
